@@ -9,11 +9,14 @@ eureka:
 spring:
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
-      routes:
-        - id: ms-catalogo-service
-          uri: lb://MS-CATALOGO-SERVICE
-          predicates:
-            - Path=/categoria/**
+      server:
+        webflux:
+          discovery:
+            locator:
+              enabled: true
+              lower-case-service-id: true
+          routes:
+            - id: ms-catalogo-service
+              uri: lb://MS-CATALOGO-SERVICE
+              predicates:
+                - Path=/categoria/**
