@@ -19,3 +19,9 @@ spring:
     url: jdbc:postgresql://localhost:8080/ms_catalogo
     username: postgres
     password: 123456
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
